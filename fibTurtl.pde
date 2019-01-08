@@ -1,3 +1,6 @@
+//longest side:10.2
+//3.9 + 6.3
+
 int angle =10;
 int iteration =5;
 float zoom = 1.0;
@@ -18,9 +21,10 @@ void draw(){
   strokeWeight(2);
   fill(255,0,0);
     for (int i = 0; i < fib.length && i <= iteration; i++){
+      rotate(radians(angle));
       line(0,0,0,fib[i]*zoom);
       translate(0,fib[i]*zoom);
-      rotate(radians(angle));
+      
       ellipse(0,0,20,20);
   }
   //angle++;
@@ -32,8 +36,8 @@ void draw(){
 void keyPressed(){
   if (keyCode == UP) angle += 1;
   if (keyCode == DOWN) angle -= 1;
-  if (keyCode == RIGHT) zoom /= 0.9;
-  if (keyCode == LEFT) zoom *= 0.9;
+  if (keyCode == RIGHT) zoom /= 0.95;
+  if (keyCode == LEFT) zoom *= 0.95;
   if (keyCode == ENTER) iteration += 1;
   
 }
